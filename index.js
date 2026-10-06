@@ -1,4 +1,5 @@
 import { program } from 'commander';
+import fs from 'node:fs';
 
 program
     .name('rpg-cli')
@@ -8,3 +9,17 @@ program
     .option('-f, --file <path>', 'шлях до JSON-файлу', 'data.json');
 
 program.parse();
+
+const options = program.opts();
+
+function loadData(filePath) {
+    try {
+        const json = fs.readFileSync(filePath, 'utf-8');
+        return JSON.parse(json);
+    } catch (error) {
+        console.error(`Помилка: не вдалося прочитати файл "${filePath}" або JSON має неправильний формат.`);
+        process.exit(1);
+    }
+}
+
+const data = loadData(options.file);
