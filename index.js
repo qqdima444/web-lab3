@@ -20,6 +20,24 @@ program
     .helpOption('-h, --help', 'показати довідку')
     .option('-f, --file <path>', 'шлях до JSON-файлу', 'data.json');
 
+program.configureOutput({
+    outputError: (str, write) => {
+        let message = str;
+
+        message = message.replace(
+            /error: missing required argument '([^']+)'/,
+            'Помилка: пропущено обов’язковий аргумент <$1>'
+        );
+
+        message = message.replace(
+            /error: unknown option '([^']+)'/,
+            'Помилка: невідома опція "$1"'
+        );
+
+        write(message);
+    }
+});
+
 program
     .command('list')
     .description('показати стислий список персонажів')
@@ -241,5 +259,5 @@ program
         console.log(`Навичка: ${character.skills[skillIndex]}`);
         console.log(`Позиція у списку навичок: ${skillIndex + 1}`);
     });
-    
+
 program.parse();
