@@ -1,0 +1,57 @@
+{
+  "game_name": "Witcher",
+  "characters": [
+    {
+      "name": "Geralt of Rivia",
+      "level": 75,
+      "health_points": 5000,
+      "stamina": 1000,
+      "power": 3000,
+      "agility": 1000,
+      "skills": ["fencing", "alchemy", "witcher signs"],
+      "inventory": [
+        {
+          "name": "silver sword",
+          "type": "weapon",
+          "is_equipped": true
+        },
+        {
+          "name": "swallow",
+          "type": "potion",
+          "is_equipped": false
+        },
+        {
+          "name": "witcher armor",
+          "type": "armor",
+          "is_equipped": true
+        }
+      ]
+    },
+    {
+      "name": "Ciri",
+      "level": 60,
+      "health_points": 4500,
+      "stamina": 1200,
+      "power": 2500,
+      "agility": 1800,
+      "skills": ["sword fighting", "teleportation", "dash"],
+      "inventory": [
+        {
+          "name": "zireael",
+          "type": "weapon",
+          "is_equipped": false
+        },
+        {
+          "name": "healing potion",
+          "type": "potion",
+          "is_equipped": true
+        },
+        {
+          "name": "leather armor",
+          "type": "armor",
+          "is_equipped": true
+        }
+      ]
+    }
+  ]
+}
